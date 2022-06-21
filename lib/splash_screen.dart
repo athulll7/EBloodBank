@@ -29,7 +29,7 @@ class _SplashScreenState extends State<SplashScreen> {
       body: Center(
         child: Image(
           height: 200,
-          image: AssetImage('assets/images/dythi logo.png'),
+          image: AssetImage('assets/images/ logo.png'),
         ),
       ),
     );
