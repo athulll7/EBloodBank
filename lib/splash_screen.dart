@@ -24,14 +24,13 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return  Scaffold(
       backgroundColor: Colors.white,
-      body: Center(
-        child: Image(
-          height: 200,
-          image: AssetImage('assets/images/ logo.png'),
-        ),
-      ),
+      body: SafeArea(
+        child:Image(
+                 
+                 image: AssetImage('assets/splashscreen.png'),height: double.infinity,
+               ))
     );
   }
 
@@ -42,7 +41,7 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   Future<void> gotoHomeScreen() async {
-    await Future.delayed(Duration(seconds: 2));
+    await Future.delayed(Duration(seconds: 3));
     Navigator.of(context).pushReplacement(MaterialPageRoute(
       builder: (context) => HomeScreen(),
     ));
