@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
       DeviceOrientation.portraitDown,
     ]);
     return MaterialApp(
+      
         home: SplashScreen(),
         theme:
             ThemeData(primaryColor: Colors.blue, primarySwatch: Colors.blue));
