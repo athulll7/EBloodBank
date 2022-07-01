@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:ebloodbank/blood_bank_sign_up_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -107,19 +109,29 @@ class Bloodbank_login_screenState extends State<Bloodbank_login_screen> {
                   textAlign: TextAlign.center,
                   style: TextStyle(color: Colors.white),
                 ),
-                TextButton(
-                  onPressed: () {
-                    Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => Blood_bank_sign_up_screen()));
-                  },
-                  child: const Text('Sign Up',
-                      style: TextStyle(
+               
+                  
+                   TextButton(onPressed: (){
+                    Navigator.of(context).push(MaterialPageRoute(builder: ((context) => Bloodbank_signup_screen()
+                    )
+                    )
+                    );
+                  }, child: Text('Sign Up',style: TextStyle(fontSize: 25,
+                  color: Colors.white,decoration: TextDecoration.underline),))
+                     /* style: TextStyle(
                           fontSize: 25,
                           color: Colors.white,
-                          decoration: TextDecoration.underline)),
+                          decoration: TextDecoration.underline)),*/
+              ]
                 ),
-              ])),
-        )),
-        resizeToAvoidBottomInset: false);
+              )
+              
+              ),
+        ),
+        
+
+
+        resizeToAvoidBottomInset: false
+        );
   }
 }
