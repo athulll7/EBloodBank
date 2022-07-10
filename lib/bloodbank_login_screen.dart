@@ -28,8 +28,8 @@ class Bloodbank_login_screenState extends State<Bloodbank_login_screen> {
               width: double.infinity,
               height: double.infinity,
               child: Column(children: [
-                Padding(
-                  padding: const EdgeInsets.all(8),
+                const Padding(
+                  padding: EdgeInsets.all(8),
                   child: Text(
                     'Blood Bank Login',
                     textAlign: TextAlign.center,
@@ -39,7 +39,7 @@ class Bloodbank_login_screenState extends State<Bloodbank_login_screen> {
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 30,
                 ),
                 Padding(
