@@ -59,6 +59,7 @@ class Donor_login_screenState extends State<Donor_login_screen> {
                       fillColor: Colors.white,
                       filled: true,
                     ),
+                    initialCountryCode: 'IN',
                   )),
               SizedBox(
                 height: 20,
@@ -103,7 +104,7 @@ class Donor_login_screenState extends State<Donor_login_screen> {
                         shape: CircleBorder())),
               ),
               SizedBox(
-                height: 55,
+                height: 50,
               ),
               Text(
                 "Don't have an account?",
@@ -113,7 +114,7 @@ class Donor_login_screenState extends State<Donor_login_screen> {
               TextButton(
                 onPressed: () {
                   Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => Donor_sign_up_screen()));
+                      builder: (context) => Donor_signup_screen()));
                 },
                 child: const Text('Sign Up',
                     style: TextStyle(
