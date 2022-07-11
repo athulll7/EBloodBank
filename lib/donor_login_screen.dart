@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 
+import 'donor_profile_screen.dart';
+
 class Donor_login_screen extends StatefulWidget {
   Donor_login_screen({Key? key}) : super(key: key);
 
@@ -92,7 +94,10 @@ class Donor_login_screenState extends State<Donor_login_screen> {
               Padding(
                 padding: const EdgeInsets.all(20),
                 child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => Donor_profile_screen()));
+                    },
                     child: const Text(
                       'Login',
                       style: TextStyle(fontSize: 18),
