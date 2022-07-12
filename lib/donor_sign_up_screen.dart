@@ -12,11 +12,17 @@ class Donor_signup_screen extends StatefulWidget {
 
 
 class _Donor_signup_screenState extends State<Donor_signup_screen> {
+  DateTime date=DateTime(2022,01,14);
+  
   bool _isObscure=true;
-   DateTime _date= DateTime(2100);
+  
   @override
   Widget build(BuildContext context) { //git init git add . git commit -m "fifth commit"   git config --global user.name "Rahulckoovara"   git remote add origin https://github.com/athulll7/EBloodBank.git
     return Scaffold(   
+      appBar: AppBar(backgroundColor: Colors.red,
+      toolbarHeight: 45),
+      
+      
       resizeToAvoidBottomInset: true,               //git push origin
       backgroundColor: Colors.red,
       body: SafeArea(
@@ -53,7 +59,10 @@ class _Donor_signup_screenState extends State<Donor_signup_screen> {
                Padding(
                 padding: const EdgeInsets.all(15.0),
                 child: Container( 
-                  child: TextFormField( style: TextStyle(color: Colors.black),
+                  child: TextFormField( 
+                    keyboardType: TextInputType.multiline,
+                    maxLines:null,
+                    style: TextStyle(color: Colors.black),
                     decoration: InputDecoration(border: OutlineInputBorder(borderRadius: BorderRadius.circular(15)),
                     contentPadding: EdgeInsets.symmetric(vertical: 40),
                     filled: true,
@@ -82,7 +91,17 @@ class _Donor_signup_screenState extends State<Donor_signup_screen> {
                     hintStyle: TextStyle(color: Colors.grey),
                     fillColor: Colors.white
                     ),textAlign: TextAlign.center,
-                   /* onTap: () async{
+                   onTap: () async{
+                  DateTime? newDate = await showDatePicker(
+                    context: context, initialDate: date, firstDate: DateTime(2010), lastDate: DateTime(2100)
+                    );
+                    if (newDate != null)
+                   setState(() {
+                         date.toString();
+                   });
+                            
+                } 
+                    /*async{
                       
                       final _date =await
          showDatePicker(
@@ -90,15 +109,15 @@ class _Donor_signup_screenState extends State<Donor_signup_screen> {
        initialDate: new DateTime.now(),
        firstDate: new DateTime(2000),
        lastDate: new DateTime(2100));
-   if (_date != null)
+   if (newDate != null)
      setState(() {
-       _date.toString();
+       date.toString();
        
      }
      );
 
-      _date= _newDate;
-       //date.text = DateFormat.('yyyy-mm-dd')
+      date= newDate;
+       date.text = DateFormat.('yyyy-mm-dd')
        }
      );*/
                     

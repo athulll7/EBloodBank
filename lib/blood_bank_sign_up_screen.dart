@@ -12,8 +12,13 @@ class _Bloodbank_signup_screenState extends State<Bloodbank_signup_screen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-       resizeToAvoidBottomInset:true , 
+      appBar: AppBar(
         backgroundColor: Colors.red,
+        toolbarHeight: 45,
+      ),
+       resizeToAvoidBottomInset:true , 
+       backgroundColor: Colors.red,
+      
       body: SafeArea(child: 
       SingleChildScrollView(
         physics: BouncingScrollPhysics(),
@@ -44,7 +49,10 @@ class _Bloodbank_signup_screenState extends State<Bloodbank_signup_screen> {
                Padding(
                 padding: const EdgeInsets.all(15.0),
                 child: Container( 
-                  child: TextFormField( style: TextStyle(color: Colors.black),
+                  child: TextFormField(
+                    keyboardType: TextInputType.multiline,
+                    maxLines:null,
+                     style: TextStyle(color: Colors.black),
                     decoration: InputDecoration( border: OutlineInputBorder(borderRadius: BorderRadius.circular(15)),
                     contentPadding: EdgeInsets.symmetric(vertical: 40),
                     filled: true,
