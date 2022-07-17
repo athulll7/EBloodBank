@@ -1,7 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
-
-
+import 'package:ebloodbank/admin_login_screen.dart';
 import 'package:ebloodbank/bloodbank_login_screen.dart';
 import 'package:ebloodbank/donor_login_screen.dart';
 import 'package:ebloodbank/raise_request_screen.dart';
@@ -121,6 +120,19 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   Divider(
                     color: Colors.white,
+                  ),
+                  ListTile(
+                    title: Text(
+                      '- Admin',
+                      style: TextStyle(
+                          fontSize: 28,
+                          color: Colors.white,
+                          fontWeight: FontWeight.w400),
+                    ),
+                    onTap: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => AdminLoginScreen()));
+                    },
                   ),
                 ],
               )
