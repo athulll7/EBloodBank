@@ -143,179 +143,181 @@ class _HomeScreenState extends State<HomeScreen> {
         toolbarHeight: 40,
       ),
       body: SafeArea(
-        child: Column(
-          children: [
-            const SizedBox(
-              height: 30,
-            ),
-            const Image(
-              image: AssetImage('assets/blood_drop.png'),
-              height: 250,
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
-                Text(
-                  'E BLOOD BANK',
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 38,
-                      fontWeight: FontWeight.w900),
-                ),
-              ],
-            ),
-            const SizedBox(height: 50),
-            Container(
-              width: MediaQuery.of(context).size.width * .89,
-              child: DropdownButtonHideUnderline(
-                child: DropdownButtonFormField(
-                  decoration: InputDecoration(
-                      border: OutlineInputBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(15)))),
-                  hint: Text(
-                    dropdownvalue,
-                    style: TextStyle(fontSize: 19),
-                  ),
-                  icon: const Icon(Icons.keyboard_arrow_down),
-                  items: items.map((String items) {
-                    return DropdownMenuItem(
-                      value: items,
-                      child: Text(
-                        items,
-                        style: TextStyle(fontSize: 19),
-                      ),
-                    );
-                  }).toList(),
-                  onChanged: (String? newValue) {
-                    setState(() {
-                      dropdownvalue = newValue!;
-                    });
-                  },
-                ),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              const SizedBox(
+                height: 30,
               ),
-            ),
-            SizedBox(
-              height: 55,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                SizedBox(
-                    height: 50,
-                    width: 70,
-                    child: ElevatedButton(
-                        onPressed: () {},
-                        child: Text(
-                          'A+',
-                          style: TextStyle(fontSize: 23),
-                        ),
-                        style: ElevatedButton.styleFrom(primary: Colors.red))),
-                SizedBox(
-                    height: 50,
-                    width: 70,
-                    child: ElevatedButton(
-                        onPressed: () {},
-                        child: Text(
-                          'B+',
-                          style: TextStyle(fontSize: 23),
-                        ),
-                        style: ElevatedButton.styleFrom(primary: Colors.red))),
-                SizedBox(
-                    height: 50,
-                    width: 70,
-                    child: ElevatedButton(
-                        onPressed: () {},
-                        child: Text(
-                          'AB+',
-                          style: TextStyle(fontSize: 20),
-                        ),
-                        style: ElevatedButton.styleFrom(primary: Colors.red))),
-                SizedBox(
-                    height: 50,
-                    width: 70,
-                    child: ElevatedButton(
-                        onPressed: () {},
-                        child: Text(
-                          'O+',
-                          style: TextStyle(fontSize: 23),
-                        ),
-                        style: ElevatedButton.styleFrom(primary: Colors.red))),
-              ],
-            ),
-            SizedBox(
-              height: 25,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                SizedBox(
-                    height: 50,
-                    width: 70,
-                    child: ElevatedButton(
-                        onPressed: () {},
-                        child: Text(
-                          'A-',
-                          style: TextStyle(fontSize: 23),
-                        ),
-                        style: ElevatedButton.styleFrom(primary: Colors.red))),
-                SizedBox(
-                    height: 50,
-                    width: 70,
-                    child: ElevatedButton(
-                        onPressed: () {},
-                        child: Text(
-                          'B-',
-                          style: TextStyle(fontSize: 23),
-                        ),
-                        style: ElevatedButton.styleFrom(primary: Colors.red))),
-                SizedBox(
-                    height: 50,
-                    width: 70,
-                    child: ElevatedButton(
-                        onPressed: () {},
-                        child: Text(
-                          'AB-',
-                          style: TextStyle(fontSize: 23),
-                        ),
-                        style: ElevatedButton.styleFrom(primary: Colors.red))),
-                SizedBox(
-                    height: 50,
-                    width: 70,
-                    child: ElevatedButton(
-                        onPressed: () {},
-                        child: Text(
-                          'O-',
-                          style: TextStyle(fontSize: 23),
-                        ),
-                        style: ElevatedButton.styleFrom(primary: Colors.red))),
-              ],
-            ),
-            SizedBox(
-              height: 50,
-            ),
-            Card(
-              elevation: 15,
-              shape: const CircleBorder(),
-              color: Colors.white,
-              child: Row(
+              const Image(
+                image: AssetImage('assets/blood_drop.png'),
+                height: 250,
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  IconButton(
-                    onPressed: () {
-                      Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => Search_result_screen()));
-                    },
-                    icon: Icon(Icons.search),
-                    iconSize: 80,
-                    splashColor: Colors.grey,
-                  )
+                children: const [
+                  Text(
+                    'E BLOOD BANK',
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 38,
+                        fontWeight: FontWeight.w900),
+                  ),
                 ],
               ),
-            ),
-          ],
+              const SizedBox(height: 50),
+              Container(
+                width: MediaQuery.of(context).size.width * .89,
+                child: DropdownButtonHideUnderline(
+                  child: DropdownButtonFormField(
+                    decoration: InputDecoration(
+                        border: OutlineInputBorder(
+                            borderRadius: BorderRadius.all(Radius.circular(15)))),
+                    hint: Text(
+                      dropdownvalue,
+                      style: TextStyle(fontSize: 19),
+                    ),
+                    icon: const Icon(Icons.keyboard_arrow_down),
+                    items: items.map((String items) {
+                      return DropdownMenuItem(
+                        value: items,
+                        child: Text(
+                          items,
+                          style: TextStyle(fontSize: 19),
+                        ),
+                      );
+                    }).toList(),
+                    onChanged: (String? newValue) {
+                      setState(() {
+                        dropdownvalue = newValue!;
+                      });
+                    },
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 55,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  SizedBox(
+                      height: 50,
+                      width: 70,
+                      child: ElevatedButton(
+                          onPressed: () {},
+                          child: Text(
+                            'A+',
+                            style: TextStyle(fontSize: 23),
+                          ),
+                          style: ElevatedButton.styleFrom(primary: Colors.red))),
+                  SizedBox(
+                      height: 50,
+                      width: 70,
+                      child: ElevatedButton(
+                          onPressed: () {},
+                          child: Text(
+                            'B+',
+                            style: TextStyle(fontSize: 23),
+                          ),
+                          style: ElevatedButton.styleFrom(primary: Colors.red))),
+                  SizedBox(
+                      height: 50,
+                      width: 70,
+                      child: ElevatedButton(
+                          onPressed: () {},
+                          child: Text(
+                            'AB+',
+                            style: TextStyle(fontSize: 20),
+                          ),
+                          style: ElevatedButton.styleFrom(primary: Colors.red))),
+                  SizedBox(
+                      height: 50,
+                      width: 70,
+                      child: ElevatedButton(
+                          onPressed: () {},
+                          child: Text(
+                            'O+',
+                            style: TextStyle(fontSize: 23),
+                          ),
+                          style: ElevatedButton.styleFrom(primary: Colors.red))),
+                ],
+              ),
+              SizedBox(
+                height: 25,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  SizedBox(
+                      height: 50,
+                      width: 70,
+                      child: ElevatedButton(
+                          onPressed: () {},
+                          child: Text(
+                            'A-',
+                            style: TextStyle(fontSize: 23),
+                          ),
+                          style: ElevatedButton.styleFrom(primary: Colors.red))),
+                  SizedBox(
+                      height: 50,
+                      width: 70,
+                      child: ElevatedButton(
+                          onPressed: () {},
+                          child: Text(
+                            'B-',
+                            style: TextStyle(fontSize: 23),
+                          ),
+                          style: ElevatedButton.styleFrom(primary: Colors.red))),
+                  SizedBox(
+                      height: 50,
+                      width: 70,
+                      child: ElevatedButton(
+                          onPressed: () {},
+                          child: Text(
+                            'AB-',
+                            style: TextStyle(fontSize: 23),
+                          ),
+                          style: ElevatedButton.styleFrom(primary: Colors.red))),
+                  SizedBox(
+                      height: 50,
+                      width: 70,
+                      child: ElevatedButton(
+                          onPressed: () {},
+                          child: Text(
+                            'O-',
+                            style: TextStyle(fontSize: 23),
+                          ),
+                          style: ElevatedButton.styleFrom(primary: Colors.red))),
+                ],
+              ),
+              SizedBox(
+                height: 50,
+              ),
+              Card(
+                elevation: 15,
+                shape: const CircleBorder(),
+                color: Colors.white,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    IconButton(
+                      onPressed: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => Search_result_screen()));
+                      },
+                      icon: Icon(Icons.search),
+                      iconSize: 80,
+                      splashColor: Colors.grey,
+                    )
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

@@ -1,3 +1,6 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:ebloodbank/user_blood.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 
@@ -15,8 +18,21 @@ class Bloodbank_profile_screen extends StatefulWidget {
 
 class _Bloodbank_profile_screenState extends State<Bloodbank_profile_screen> {
   DateTime date=DateTime(2022,12,22);
-  
+  User? user = FirebaseAuth.instance.currentUser;
+  userblood loggedInUser = userblood();
+
   @override
+   void initState() {
+    super.initState();
+   FirebaseFirestore.instance
+        .collection("BLOODBANK")
+        .doc(user!.uid)
+        .get()
+        .then((value) {
+      this.loggedInUser = userblood.fromMap(value.data());
+      setState(() {});
+    });
+  }
   Widget build(BuildContext context) {
      return Scaffold(
      
@@ -63,7 +79,7 @@ class _Bloodbank_profile_screenState extends State<Bloodbank_profile_screen> {
                  Padding(
                   padding: const EdgeInsets.all(15.0),
                   child: Text(
-                    'Kasaragod General Hospital Blood Bank',
+                    "${loggedInUser.nameofbloodbank}",
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       color: Colors.black,
