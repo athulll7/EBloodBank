@@ -29,7 +29,7 @@ class _HomeScreenState extends State<HomeScreen> {
     'Pathanamthitta',
     'Idukki',
     'Malappuram',
-    'Kozhiode',
+    'Kozhikode',
     'Trissur',
     'Palakkad',
     'Tiruvanathapuram'
@@ -134,6 +134,9 @@ class _HomeScreenState extends State<HomeScreen> {
                           builder: (context) => AdminLoginScreen()));
                     },
                   ),
+                  Divider(
+                    color: Colors.white,
+                  ),
                 ],
               )
             ],
@@ -175,7 +178,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: DropdownButtonFormField(
                     decoration: InputDecoration(
                         border: OutlineInputBorder(
-                            borderRadius: BorderRadius.all(Radius.circular(15)))),
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(15)))),
                     hint: Text(
                       dropdownvalue,
                       style: TextStyle(fontSize: 19),
@@ -213,7 +217,8 @@ class _HomeScreenState extends State<HomeScreen> {
                             'A+',
                             style: TextStyle(fontSize: 23),
                           ),
-                          style: ElevatedButton.styleFrom(primary: Colors.red))),
+                          style:
+                              ElevatedButton.styleFrom(primary: Colors.red))),
                   SizedBox(
                       height: 50,
                       width: 70,
@@ -223,7 +228,8 @@ class _HomeScreenState extends State<HomeScreen> {
                             'B+',
                             style: TextStyle(fontSize: 23),
                           ),
-                          style: ElevatedButton.styleFrom(primary: Colors.red))),
+                          style:
+                              ElevatedButton.styleFrom(primary: Colors.red))),
                   SizedBox(
                       height: 50,
                       width: 70,
@@ -233,7 +239,8 @@ class _HomeScreenState extends State<HomeScreen> {
                             'AB+',
                             style: TextStyle(fontSize: 20),
                           ),
-                          style: ElevatedButton.styleFrom(primary: Colors.red))),
+                          style:
+                              ElevatedButton.styleFrom(primary: Colors.red))),
                   SizedBox(
                       height: 50,
                       width: 70,
@@ -243,7 +250,8 @@ class _HomeScreenState extends State<HomeScreen> {
                             'O+',
                             style: TextStyle(fontSize: 23),
                           ),
-                          style: ElevatedButton.styleFrom(primary: Colors.red))),
+                          style:
+                              ElevatedButton.styleFrom(primary: Colors.red))),
                 ],
               ),
               SizedBox(
@@ -261,7 +269,8 @@ class _HomeScreenState extends State<HomeScreen> {
                             'A-',
                             style: TextStyle(fontSize: 23),
                           ),
-                          style: ElevatedButton.styleFrom(primary: Colors.red))),
+                          style:
+                              ElevatedButton.styleFrom(primary: Colors.red))),
                   SizedBox(
                       height: 50,
                       width: 70,
@@ -271,7 +280,8 @@ class _HomeScreenState extends State<HomeScreen> {
                             'B-',
                             style: TextStyle(fontSize: 23),
                           ),
-                          style: ElevatedButton.styleFrom(primary: Colors.red))),
+                          style:
+                              ElevatedButton.styleFrom(primary: Colors.red))),
                   SizedBox(
                       height: 50,
                       width: 70,
@@ -281,7 +291,8 @@ class _HomeScreenState extends State<HomeScreen> {
                             'AB-',
                             style: TextStyle(fontSize: 23),
                           ),
-                          style: ElevatedButton.styleFrom(primary: Colors.red))),
+                          style:
+                              ElevatedButton.styleFrom(primary: Colors.red))),
                   SizedBox(
                       height: 50,
                       width: 70,
@@ -291,7 +302,8 @@ class _HomeScreenState extends State<HomeScreen> {
                             'O-',
                             style: TextStyle(fontSize: 23),
                           ),
-                          style: ElevatedButton.styleFrom(primary: Colors.red))),
+                          style:
+                              ElevatedButton.styleFrom(primary: Colors.red))),
                 ],
               ),
               SizedBox(
