@@ -1,111 +1,100 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:intl_phone_field/intl_phone_field.dart';
+import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 
-class Requests_screen extends StatelessWidget {
+class Requests_screen extends StatefulWidget {
   const Requests_screen({Key? key}) : super(key: key);
 
   @override
+  State<Requests_screen> createState() => _Requests_screenState();
+}
+
+class _Requests_screenState extends State<Requests_screen> {
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.red,
-      appBar: AppBar(
-        toolbarHeight: 45,
-        backgroundColor: Colors.red,
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(30.0),
-        child: Container(
-          width: double.infinity,
-          height: double.infinity,
-          child: Column(
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
-                  Padding(
-                    padding: EdgeInsets.all(8.0),
-                    child: Text(
-                      'Request',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 50,
+        backgroundColor: Colors.white,
+        appBar: AppBar(
+          backgroundColor: Colors.red,
+          toolbarHeight: 40,
+        ),
+        body: ListView.separated(
+            itemBuilder: ((context, index) {
+              return Card(
+                child: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Expanded(
+                      flex: 1,
+                      child: Column(
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text("Patient Name : "),
+                              Text(
+                                "Name $index",
+                                style: TextStyle(fontSize: 28),
+                              ),
+                            ],
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text("Hospital Name :  "),
+                              Text(
+                                "Hospital $index",
+                                style: TextStyle(fontSize: 23),
+                              ),
+                            ],
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                "Blood Required: ",
+                                style: TextStyle(fontSize: 14),
+                              ),
+                              Text(
+                                " A+",
+                                style: TextStyle(
+                                    fontSize: 28,
+                                    color: Colors.red,
+                                    fontWeight: FontWeight.w500),
+                              ),
+                            ],
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              ElevatedButton(
+                                  onPressed: () {
+                                    FlutterPhoneDirectCaller.callNumber(
+                                        '9605048647');
+                                  },
+                                  child: const Text(
+                                    'Call',
+                                    style: TextStyle(
+                                      fontSize: 18,
+                                    ),
+                                  ),
+                                  style: ElevatedButton.styleFrom(
+                                    fixedSize: Size(100, 20),
+                                    primary: Color.fromRGBO(52, 151, 238, 1),
+                                    onPrimary: Colors.black,
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(3.0),
+                                    ),
+                                  )),
+                            ],
+                          ),
+                        ],
                       ),
                     ),
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: 50,
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: TextFormField(
-                  style: TextStyle(color: Colors.black),
-                  decoration: InputDecoration(
-                      prefixIcon: Icon(Icons.bloodtype),
-                      border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(15)),
-                      filled: true,
-                      hintText: 'Blood Group Required',
-                      hintStyle: TextStyle(color: Colors.grey),
-                      fillColor: Colors.white),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: TextFormField(
-                  style: TextStyle(color: Colors.black),
-                  decoration: InputDecoration(
-                      prefixIcon: Icon(
-                        Icons.local_hospital,
-                      ),
-                      border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(15)),
-                      filled: true,
-                      hintText: 'Name of Hospital',
-                      hintStyle: TextStyle(color: Colors.grey),
-                      fillColor: Colors.white),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: IntlPhoneField(
-                  controller: TextEditingController(),
-                  keyboardType: TextInputType.number,
-                  inputFormatters: <TextInputFormatter>[
-                    FilteringTextInputFormatter.allow(RegExp(r'[0-9]')),
                   ],
-                  decoration: InputDecoration(
-                    prefixIcon: Icon(Icons.phone_android),
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(15)),
-                    hintText: 'Phone Number',
-                    fillColor: Colors.white,
-                    filled: true,
-                  ),
-               initialCountryCode: 'IN',
                 ),
-              ),
-              SizedBox(
-                height: 60,
-                width: 150,
-                child: ElevatedButton(
-                  onPressed: () {},
-                  child: Text(
-                    "Request",
-                    style: TextStyle(color: Colors.black, fontSize: 20),
-                  ),
-                  style: ElevatedButton.styleFrom(
-                    primary: Colors.white,
-                  ),
-                ),
-              )
-            ],
-          ),
-        ),
-      ),
-    );
+              );
+            }),
+            separatorBuilder: ((context, index) => Divider()),
+            itemCount: 15));
   }
 }
