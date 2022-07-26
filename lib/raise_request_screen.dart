@@ -13,6 +13,9 @@ class Raise_request_screen extends StatefulWidget {
 }
 
 class _Raise_request_screenState extends State<Raise_request_screen> {
+  TextEditingController _patientname=new TextEditingController();
+TextEditingController _hospitalname=new TextEditingController();
+TextEditingController _requiredblood=new TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,6 +52,7 @@ class _Raise_request_screenState extends State<Raise_request_screen> {
                       Padding(
                         padding: const EdgeInsets.all(15.0),
                         child: TextFormField(
+                          controller:_patientname ,
                           textAlign: TextAlign.center,
                           decoration: InputDecoration(
                               hintText: 'Patient Name',
@@ -62,6 +66,7 @@ class _Raise_request_screenState extends State<Raise_request_screen> {
                       Padding(
                         padding: const EdgeInsets.all(15.0),
                         child: TextFormField(
+                          controller: _hospitalname,
                           keyboardType: TextInputType.multiline,
                           maxLines: null,
                           decoration: InputDecoration(
@@ -79,6 +84,7 @@ class _Raise_request_screenState extends State<Raise_request_screen> {
                       Padding(
                         padding: const EdgeInsets.all(15.0),
                         child: TextFormField(
+                          controller: _requiredblood,
                           textAlign: TextAlign.center,
                           decoration: InputDecoration(
                               hintText: 'Required Blood',
@@ -317,7 +323,8 @@ class _Raise_request_screenState extends State<Raise_request_screen> {
                           ElevatedButton(
                               onPressed: () {
                                 Navigator.of(context).push(MaterialPageRoute(
-                                    builder: (context) => Requests_screen()));
+                                    builder: (context) => Requests_screen(patientname: _patientname.text, hospitalname: _hospitalname.text,
+                          requiredblood: _requiredblood.text,)));
                               },
                               child: Text('Request'),
                               style: ElevatedButton.styleFrom(

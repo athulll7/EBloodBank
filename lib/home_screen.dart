@@ -16,6 +16,10 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  TextEditingController _patientname=new TextEditingController();
+TextEditingController _hospitalname=new TextEditingController();
+TextEditingController _requiredblood=new TextEditingController();
+
   String dropdownvalue = 'Select District';
 
   var items = [
@@ -99,7 +103,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     onTap: () {
                       Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => Requests_screen()));
+                          builder: (context) => Requests_screen(patientname: _patientname.text, hospitalname: _hospitalname.text,
+                          requiredblood: _requiredblood.text,)));
                     },
                   ),
                   Divider(

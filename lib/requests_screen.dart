@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
+ 
+ class Requests_screen extends StatelessWidget {
+String patientname,hospitalname,requiredblood;
 
-class Requests_screen extends StatefulWidget {
-  const Requests_screen({Key? key}) : super(key: key);
+Requests_screen({ required this.patientname,required this.hospitalname,required this.requiredblood});
+  //const Requests_screen({Key? key}) : super(key: key);
 
-  @override
-  State<Requests_screen> createState() => _Requests_screenState();
-}
-
-class _Requests_screenState extends State<Requests_screen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,37 +28,37 @@ class _Requests_screenState extends State<Requests_screen> {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Text("Patient Name : "),
-                              Text(
-                                "Name $index",
-                                style: TextStyle(fontSize: 28),
-                              ),
+                              Text("Patient Name: ${patientname}",style: TextStyle(fontSize: 28) ,),
+                           //   Text("Name $index",
+                            //  style: TextStyle(fontSize: 28),
+                            //  ),
                             ],
                           ),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Text("Hospital Name :  "),
-                              Text(
-                                "Hospital $index",
-                                style: TextStyle(fontSize: 23),
-                              ),
+                              Text("Hospital Name : ${hospitalname} ",style: TextStyle(fontSize: 23),),
+                            //  Text(
+                             //   "Hospital $index",
+                            //    style: TextStyle(fontSize: 23),
+                           //   ),
                             ],
                           ),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                "Blood Required: ",
-                                style: TextStyle(fontSize: 14),
+                                "Blood Required:${requiredblood} ",style: TextStyle(
+                                  fontSize: 20,color: Colors.red,fontWeight: FontWeight.w500),
+                               // style: TextStyle(fontSize: 14),
                               ),
-                              Text(
+                            /*  Text(
                                 " A+",
                                 style: TextStyle(
                                     fontSize: 28,
                                     color: Colors.red,
                                     fontWeight: FontWeight.w500),
-                              ),
+                              ),*/
                             ],
                           ),
                           Row(
@@ -96,5 +94,8 @@ class _Requests_screenState extends State<Requests_screen> {
             }),
             separatorBuilder: ((context, index) => Divider()),
             itemCount: 15));
+
+    
   }
 }
+
