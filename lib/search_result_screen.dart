@@ -166,7 +166,7 @@ class Search_result_screen extends StatelessWidget {
                         style: TextStyle(fontSize: 18),
                       ),
                       Row(
-                        children: [
+                       children: [
                           Text(
                             "Last Donated : ",
                             style: TextStyle(fontSize: 19),

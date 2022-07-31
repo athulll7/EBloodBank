@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:ebloodbank/userdonor.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 import 'package:ebloodbank/donor_login_screen.dart';
 
@@ -12,8 +15,23 @@ class Donor_profile_screen extends StatefulWidget {
 
 class _Donor_profile_screenState extends State<Donor_profile_screen> {
   DateTime date = DateTime(2022, 12, 22);
+   User? user = FirebaseAuth.instance.currentUser;
+  userdonor loggedInUser = userdonor();
+
+
 
   @override
+   void initState() {
+    super.initState();
+   FirebaseFirestore.instance
+        .collection("DONOR")
+        .doc(user!.uid)
+        .get()
+        .then((value) {
+      this.loggedInUser = userdonor.fromMap(value.data());
+      setState(() {});
+    });
+  }
   Widget build(BuildContext context) {
     return Scaffold(
         resizeToAvoidBottomInset: false,
@@ -59,7 +77,7 @@ class _Donor_profile_screenState extends State<Donor_profile_screen> {
                   Padding(
                     padding: const EdgeInsets.all(15.0),
                     child: Text(
-                      'Manu S Kumar',
+                      "${loggedInUser.nameofdonor}",
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         color: Colors.black,
@@ -75,13 +93,12 @@ class _Donor_profile_screenState extends State<Donor_profile_screen> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        const Text(
-                          'Address :',
-                          style: TextStyle(fontSize: 17),
+                         Text("Address",
+                      style: TextStyle(fontSize: 17),
                         ),
                         SizedBox(width: 10),
                         Text(
-                          'Povval,Kasaragod',
+                          "${loggedInUser.address}",
                           style: TextStyle(fontSize: 22),
                         ),
                       ],
@@ -100,7 +117,7 @@ class _Donor_profile_screenState extends State<Donor_profile_screen> {
                           width: 10,
                         ),
                         Text(
-                          '964521179',
+                          "${loggedInUser.phonenumber}",
                           style: TextStyle(fontSize: 22),
                         ),
                       ],

@@ -123,81 +123,7 @@ class Bloodbank_login_screenState extends State<Bloodbank_login_screen> {
                     ),
                     passwordField,
 
-                    /*  Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child:
-
-                      TextFormField(
-                        controller: emailController,
-                        keyboardType: TextInputType.emailAddress,
-                        validator: (value)
-                        {
-                          if(value!.isEmpty)
-                          {
-                            return('please enter your email');
-                          }
-                          return null ;
-                        },
-                        onSaved: (Value)
-              
-                      {
-                        emailController.text=Value!;
-                      },
-              
-                       style: TextStyle(color: Colors.black),
-                        decoration: InputDecoration(
-                            prefixIcon: Icon(
-                              Icons.email,
-                            ),
-                            border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(15)),
-                            filled: true,
-                            hintText: 'Email id',
-                            hintStyle: TextStyle(color: Colors.grey),
-                            fillColor: Colors.white),
-                      )),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(15.0),
-                    child: Container(
-                      child: TextFormField(
-                         controller: passwordController,
-                         validator: (value)
-                         {
-                         if(value!.isEmpty)
-                         {
-                          return ("please enter your password");
-                         }
-                         },
-                        
-                        onSaved: (Value)
-              
-                      {
-                        passwordController.text=Value!;
-                      },
-                        obscureText: _isObscure,
-                        decoration: InputDecoration(
-                            prefixIcon: Icon(Icons.lock),
-                            hintText: 'Password',
-                            suffixIcon: IconButton(
-                                icon: Icon(_isObscure
-                                    ? Icons.visibility_off
-                                    : Icons.visibility),
-                                onPressed: () {
-                                  setState(() {
-                                    _isObscure = !_isObscure;
-                                  });
-                                }),
-                            border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(15)),
-                            filled: true,
-                            fillColor: Colors.white),
-                      ),
-                    ),
-                  ),
-                  */
+                    
                     SizedBox(height: 20),
                     Padding(
                       padding: const EdgeInsets.all(20),
@@ -236,17 +162,6 @@ class Bloodbank_login_screenState extends State<Bloodbank_login_screen> {
                                 color: Colors.white,
                                 decoration: TextDecoration.underline)))
 
-                    /*TextButton(onPressed: (){
-                      Navigator.of(context).push(MaterialPageRoute(builder: ((context) => Bloodbank_signup_screen()
-                      )
-                      )
-                      );
-                    }, child: Text('Sign Up',style: TextStyle(fontSize: 25,
-                    color: Colors.white,decoration: TextDecoration.underline),))*/
-                    /* style: TextStyle(
-                            fontSize: 25,
-                            color: Colors.white,
-                            decoration: TextDecoration.underline)),*/
                   ]),
                 ),
               )),
