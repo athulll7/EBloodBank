@@ -16,9 +16,9 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  TextEditingController _patientname=new TextEditingController();
-TextEditingController _hospitalname=new TextEditingController();
-TextEditingController _requiredblood=new TextEditingController();
+  TextEditingController _patientname = new TextEditingController();
+  TextEditingController _hospitalname = new TextEditingController();
+  TextEditingController _requiredblood = new TextEditingController();
 
   String dropdownvalue = 'Select District';
 
@@ -38,6 +38,7 @@ TextEditingController _requiredblood=new TextEditingController();
     'Palakkad',
     'Tiruvanathapuram'
   ];
+  final bool _hasBeenPressed = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -103,8 +104,11 @@ TextEditingController _requiredblood=new TextEditingController();
                     ),
                     onTap: () {
                       Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => Requests_screen(patientname: _patientname.text, hospitalname: _hospitalname.text,
-                          requiredblood: _requiredblood.text,)));
+                          builder: (context) => Requests_screen(
+                                patientname: _patientname.text,
+                                hospitalname: _hospitalname.text,
+                                requiredblood: _requiredblood.text,
+                              )));
                     },
                   ),
                   Divider(
@@ -269,13 +273,13 @@ TextEditingController _requiredblood=new TextEditingController();
                       height: 50,
                       width: 70,
                       child: ElevatedButton(
-                          onPressed: () {},
-                          child: Text(
-                            'A-',
-                            style: TextStyle(fontSize: 23),
-                          ),
-                          style:
-                              ElevatedButton.styleFrom(primary: Colors.red))),
+                        onPressed: () {},
+                        child: Text(
+                          'A-',
+                          style: TextStyle(fontSize: 23),
+                        ),
+                        style: ElevatedButton.styleFrom(primary: Colors.red),
+                      )),
                   SizedBox(
                       height: 50,
                       width: 70,

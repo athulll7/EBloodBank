@@ -114,7 +114,7 @@ class Search_result_screen extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        "Ravi",
+                        "Sonu",
                         style: TextStyle(fontSize: 25),
                       ),
                       Text(
@@ -142,7 +142,9 @@ class Search_result_screen extends StatelessWidget {
                   ),
                   iconSize: 38,
                   color: Colors.blue,
-                  onPressed: () {},
+                  onPressed: () {
+                    FlutterPhoneDirectCaller.callNumber('89847999382');
+                  },
                 )
               ],
             ),
@@ -158,7 +160,7 @@ class Search_result_screen extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        "Manu",
+                        "Athul",
                         style: TextStyle(fontSize: 25),
                       ),
                       Text(
@@ -186,7 +188,9 @@ class Search_result_screen extends StatelessWidget {
                   ),
                   iconSize: 38,
                   color: Colors.blue,
-                  onPressed: () {},
+                  onPressed: () {
+                    FlutterPhoneDirectCaller.callNumber('6282114621');
+                  },
                 )
               ],
             ),
@@ -277,7 +281,7 @@ class Search_result_screen extends StatelessWidget {
                   iconSize: 38,
                   color: Colors.blue,
                   onPressed: () {
-                    FlutterPhoneDirectCaller.callNumber('9645211753');
+                    FlutterPhoneDirectCaller.callNumber('8943650493');
                   },
                 )
               ],
